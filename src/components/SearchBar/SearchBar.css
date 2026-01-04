@@ -1,0 +1,117 @@
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  background-color: var(--bg-secondary, #ffffff);
+  color: var(--text-primary, #1e293b);
+  transition: all 0.2s ease;
+}
+
+.dark-theme .search-input {
+  background-color: var(--bg-secondary, #1e1e1e);
+  border-color: var(--border-color, #444444);
+  color: var(--text-primary, #ffffff);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color, #007bff);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary, #6c757d);
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color, #007bff);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md, 8px);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.search-button:hover {
+  background-color: var(--primary-hover, #0056b3);
+}
+
+.search-button:active {
+  transform: translateY(1px);
+}
+
+.search-button:disabled {
+  background-color: var(--text-secondary, #6c757d);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Search suggestions */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-secondary, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+  margin-top: 0.25rem;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.dark-theme .search-suggestions {
+  background-color: var(--bg-secondary, #1e1e1e);
+  border-color: var(--border-color, #444444);
+}
+
+.suggestion-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.suggestion-item:hover {
+  background-color: var(--bg-primary, #f8f9fa);
+}
+
+.dark-theme .suggestion-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.suggestion-item.active {
+  background-color: var(--primary-color, #007bff);
+  color: white;
+}
+
+/* Search container with suggestions */
+.search-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .search-bar {
+    flex-direction: column;
+  }
+  
+  .search-button {
+    width: 100%;
+  }
+}
