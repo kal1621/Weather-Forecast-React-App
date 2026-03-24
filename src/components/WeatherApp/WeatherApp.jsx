@@ -112,7 +112,6 @@ const WeatherApp = () => {
   const wind = getSafeWind();
   const clouds = getSafeClouds();
   const weatherArray = getSafeWeather();
-  const currentWeather = weatherArray[0];
   const visibility = getSafeVisibility();
 
   return (
